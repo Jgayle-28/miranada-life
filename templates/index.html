@@ -1,0 +1,165 @@
+{% extends "layout.html"%}
+{% load static from staticfiles %}
+
+
+{% block content %}
+<!-- Hero section -->
+<header id="home-section">
+    <div class="dark-overlay">
+        <div class="home-inner">
+            <!-- container for hero content -->
+            <div class="container">
+                <div class="row">
+                    <!-- Miranda image -->
+                    <div class="col-lg-12 text-center">
+                        <img src="{% static "img/ml.png" alt="Miranda Life Image" %}" class="img-fluid rounded mx-auto d-block mb-2"/>
+                        <a href="" class="btn btn-outline-light mt-5 p-3">SIGN YOUR LIFE AWAY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Testamonials -->
+<section id="test-section">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="p-5">
+                    <h1 class="section-title pb-4">Are We Liked...</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Cards -->
+        <div class="row pb-5 m-auto">
+            <!-- Marcus -->
+            <div class="col-md-6 col-lg-4 pb-3">
+                <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+                <div class="card card-custom bg-white border-white border-0">
+                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                    <div class="card-custom-avatar">
+                    <img class="img-fluid" src="{% static "img/marcus.png" alt="Rednec Spider Killer" %}"/>
+                    </div>
+                    <div class="card-body" style="overflow-y: auto">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">I used The Miranda Life to save momma's house.</p>
+                    <p class="card-text">I got that blow torch out in a jiffy and got that herry turd burgelar in the corner.</p>
+                    <p class="card-text">With out The Miranda Life I would have never gotten my fish sticks!</p>
+                    </div>
+                    <!-- Card Footer -->
+                    <div class="card-footer" style="background: inherit; border-color: inherit;">
+                    <a href="https://youtu.be/dWqrez4P83I" class="btn btn-outline-primary">Check out my story</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Redneck Spider Killer -->
+            <div class="col-md-6 col-lg-4 pb-3">
+                <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+                <div class="card card-custom bg-white border-white border-0">
+                <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                <div class="card-custom-avatar">
+                    <img class="img-fluid" src="{% static "img/redneck.png" alt="Rednec Spider Killer" %}"/>
+                </div>
+                <div class="card-body" style="overflow-y: auto">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-lead"><strong>"I used The Miranda Life to save momma's house."</strong></p>
+                    <p class="card-text">I got that blow torch out in a jiffy and got that herry turd burgelar in the corner.</p>
+                    <p class="card-text">With out The Miranda Life I would have never gotten my fish sticks!</p>
+                </div>
+                <!-- Card Footer -->
+                <div class="card-footer" style="background: inherit; border-color: inherit;">
+                    <a href="https://youtu.be/dWqrez4P83I" class="btn btn-outline-primary">Check out my story</a>
+                </div>
+                </div>
+            </div>
+            <!-- G Dizzle -->
+            <div class="col-md-6 col-lg-4 pb-3">
+                <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+                <div class="card card-custom bg-white border-white border-0">
+                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                    <div class="card-custom-avatar">
+                    <img class="img-fluid" src="{% static "img/sammy.png" alt="Rednec Spider Killer" %}"/>
+                    </div>
+                    <!-- Card body -->
+                    <div class="card-body" style="overflow-y: auto">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-lead"><strong>"And there I went, I was like a flying gordida!"</strong></p>
+                    <p class="card-text">Alls I gots ta say is <strong>I didn't choose the ninja life. The ninja life choose me! </strong> </p>
+
+                    <p class="card-text">With out The Miranda Life I never would have gotten the gordida pose down</p>
+                    <p class="card-text">Thanks Miranda Life</p>
+                    </div>
+                    <!-- Card Footer -->
+                    <div class="card-footer" style="background: inherit; border-color: inherit;">
+                        <a href="https://www.youtube.com/watch?v=e3n7ydQt140" class="btn btn-outline-primary">Check out my story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About -->
+<section id="about-section" class="bg-light text-muted">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                    <div class="p-5">
+                        <h1 class="section-title pb-4">The Real</h1>
+                        <p class="lead">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum inventore sunt cumque omnis itaque corrupti, dolores ab delectus beatae excepturi.
+                        </p>
+                        <a href="" class="btn btn-outline-primary">Going Dutch</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<!-- Contact -->
+<section id="contact-section" class="bg-primary bgblue">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                        <div class="p-5">
+                            <h1 class="section-title pb-4">Get at Me</h1>
+                            <p class="lead">
+                                Not happy with your experience?  The Mrianada Life got you down?  Don't worry, we understand the struggle just hit that nifty little button below.
+                            </p>
+                            <p>But if you start crying on me......Your on your own!</p>
+                            <!-- Contact Modal -->
+                            <div class="modal animated bounceInUp text-dark" id="contactModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="contactModalTitle">
+                                        Contact Us
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary btn-block">Submit</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-light" data-toggle="modal" data-target="#contactModal">Chit Chat</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

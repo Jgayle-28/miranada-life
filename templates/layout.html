@@ -1,0 +1,110 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %} Miranda Life {% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- FontAwesome/Bootstrap/Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+  </head>
+  <body id="home">
+      <!--Navigation-->
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top justify-content-between">
+          <div class="container">
+              <!-- Company Logo -->
+              <a href="" class="navbar-brand"><img src="{% static "img/shake.png" alt="Miranda Life Image" %}" class="img-fluid rounded mx-auto d-block mb-2"/></a>
+              <!-- Hamburger toggler for mobile -->
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcollapse">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- navbar links -->
+              <div class="collapse navbar-collapse" id="navbarcollapse">
+                  <!-- <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a href="#home" class="nav-link">LOGIN</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="" class="nav-link">SIGN UP</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="" class="nav-link">DASHBOARD</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="" class="nav-link">LOGOUT</a>
+                      </li>
+                  </ul> -->
+                    <!-- Login Form -->
+
+                  <!-- <form class="form-inline ml-auto">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">                            
+                      </div>
+                      <div class="form-group mx-sm-1">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">                                            
+                      </div>
+                    <button class="btn btn-outline-primary" type="submit">LOGIN</button>
+                  </form> -->
+
+                <!-- Button trigger login modal -->
+                <button type="button" class="btn btn-outline-primary ml-auto" data-toggle="modal" data-target="#loginModal">
+                        LOGIN
+                </button>
+                <button type="button" class="btn btn-outline-secondary ml-1" data-toggle="modal" data-target="#exampleModal">
+                        REGISTER
+                </button>
+              </div>
+
+          </div>
+      </nav>
+    {% block content%}
+    {% endblock %}
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col text-center">
+                    <h4 class="jg">Made with love by</h4>
+                    <a href=""><img src="{% static "img/jg.svg" %}"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+                        
+<!-- Modal -->
+    <div class="modal animated bounceInDown" id="loginModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">LOGIN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <form class="">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">                            
+                        </div>
+                        <div class="form-group mx-sm-1">
+                            <input type="password" class="form-control" id="loginPassword1" placeholder="Password">
+                        </div>
+                        <button class="btn btn-outline-primary" type="submit">LOGIN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

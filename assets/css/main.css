@@ -2,7 +2,7 @@
 /*font-color: #fff*/
 /*primary-color: #008ed6*/
 
-/* Globa */
+/* Global */
 body{
     background: #333;
     color: #fff;
@@ -55,8 +55,8 @@ body{
     background: #008ed6;
 }
 
-#test-section{
-
+#about-section{
+    background: #fff;
 }
 
 /* Testamonial cards */
@@ -119,4 +119,10 @@ body{
 .jg{
     font-weight: 100;
 }
+/* Form Styles */
+.form-pt{
+    padding-top: 30px;
+}
 /*Media Queries*/
+
+

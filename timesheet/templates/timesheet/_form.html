@@ -1,0 +1,14 @@
+{% load bootstrap4 %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h2>What did you make today?</h2>  
+    <div class="row">
+        <div class="col-md-4">
+            {% bootstrap_form form %}
+            {% buttons%}
+                <input type="submit" value="RECORD" class="btn btn-outline-primary">
+            {% endbuttons %}
+        </div>
+    </div>  
+</form>

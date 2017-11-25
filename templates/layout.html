@@ -60,8 +60,10 @@
                     <button type="button" class="btn btn-outline-secondary ml-1" data-toggle="modal" data-target="#exampleModal">
                             REGISTER
                     </button>
+                    
                 {% else %}
                     <a href="" class="ml-auto nav-item text-muted">RECORD</a>
+                    <a href="{% url 'users:logout' %}" class="ml-3 nav-item text-muted">LOGOUT</a>
                 {% endif %}
               </div>
 

@@ -4,16 +4,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views.generic import FormView, CreateView
+from django.views import generic
 
 from . import forms
 
-# Sends users to userdashboard apon login
-def dashboard(request):
-    return render(request, 'users/dashboard.html')
+class Dashboard(LoginRequiredMixin, generic.TemplateView):
+    template_name = 'users/dashboard.html'
 
 # Allows users to logout
-class LogoutView(LoginRequiredMixin, FormView):
+class LogoutView(LoginRequiredMixin, generic.FormView):
     form_class = forms.LogoutForm
     template_name = 'users/logout.html'
 
@@ -22,7 +21,7 @@ class LogoutView(LoginRequiredMixin, FormView):
         return HttpResponseRedirect(reverse('home'))
 
 # Allows users to sign up
-class SignUpView(CreateView):
+class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'users/signup.html'
     success_url = reverse_lazy('users:dashboard')

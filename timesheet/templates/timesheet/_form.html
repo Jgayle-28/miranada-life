@@ -1,8 +1,8 @@
 {% load bootstrap4 %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <h2>What did you make today?</h2>  
+<form method="POST" action="{% url 'days:create' %}">
+    <h2>What did you make today?</h2> 
+    {% csrf_token %}    
     <div class="row">
         <div class="col-md-4">
             {% bootstrap_form form %}

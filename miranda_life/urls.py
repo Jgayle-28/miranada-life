@@ -18,11 +18,12 @@ from django.contrib import admin
 
 from django.views.generic import TemplateView
 
+from timesheet import urls as timesheet_urls
 from users import urls as user_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^users/',include(user_urls, namespace="users")),
+    url(r'^users/',include(user_urls, namespace="users")), # Routes to users urls.py
+    url(r'^days/', include(timesheet_urls, namespace="days")), # Routes to the timesheet urls.py
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    # url(r'^', include('timesheet.urls')), # Routes to the timesheet urls.py
 ]

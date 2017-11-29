@@ -14,7 +14,7 @@ WEEKDAY = (
 )
 
 class DailyEarning(models.Model):
-    user = models.ForeignKey(User, related_name='Earnings')
+    user = models.ForeignKey(User, related_name='earnings')
     recorded_at = models.DateTimeField(default=timezone.now, editable=False)
     day = models.IntegerField(choices=WEEKDAY)
     made = models.FloatField(default=0)
@@ -22,6 +22,9 @@ class DailyEarning(models.Model):
 
     def __str__(self):
         return '{}: {}'.format(self.recorded_at.strftime('%Y-%m-%d '), self.get_day_display())
+
+    class Meta:
+        ordering = ['day']
 
 
 # class Week(models.Model):

@@ -1,10 +1,10 @@
 {% load bootstrap4 %}
 
 <form method="POST" action="{% url 'days:create' %}">
-    <h2>What did you make today?</h2> 
+    <h2 class="font-weight-light">What did you make today?</h2> 
     {% csrf_token %}    
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-10">
             {% bootstrap_form form %}
             {% buttons%}
                 <input type="submit" value="RECORD" class="btn btn-outline-primary">

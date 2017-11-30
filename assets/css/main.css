@@ -134,9 +134,16 @@ line-height: 60px; /* Vertically center the text there */
 background-color: #f5f5f5;
 }
 
+/* day text */
+.day-text{
+    color: #008ed6;
+}
+
+/* logo */
 .jg{
     font-weight: 100;
 }
+
 /* Form Styles */
 .form-pt{
     padding-top: 30px;

@@ -8,15 +8,29 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6">
-                <h2>For the Week</h2>
-                <ul>
-                    {% for day in user.earnings.all %}
-                    <li>{{ day.get_day_display }}</li>
-                    {% endfor %}
-                </ul>
+                {% earnings_form %}
             </div>
             <div class="col-md-6">
-                {% earnings_form %}
+                <h2 class="font-weight-light">For the Week</h2>
+                <!-- Displays each recorded day for user -->
+                <div class="list-group">
+                    {% for day in user.earnings.all %}
+                    <div class="list-group-item alert-light">
+                        <!-- Displays the day -->
+                        <h5 class="mb-1 day-text">
+                            {{ day.get_day_display }}
+                        <!-- Displays the date recorded -->
+                        <small><time class="pull-right small" datetime="{{ day.recorded_at }}">{{ day.recorded_at|date:"SHORT_DATE_FORMAT" }}</time></small>
+                        </h5>
+                        <!-- Notes for the day -->
+                        {% if day.notes %}
+                            {{ day.notes|linebreaks }}
+                        {% endif %}
+                        <!-- What they made -->
+                        {{ day.made|linebreaks }}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

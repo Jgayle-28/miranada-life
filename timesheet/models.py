@@ -6,7 +6,7 @@ from datetime import datetime
 WEEKDAY = (
     (1, 'Monday'),
     (2, 'Tuesday'),
-    (3, 'wednesday'),
+    (3, 'Wednesday'),
     (4, 'Thursday'),
     (5, 'Friday'),
     (6, 'Saturday'),
@@ -21,7 +21,7 @@ class DailyEarning(models.Model):
     notes = models.TextField(blank=True, default='')
 
     def __str__(self):
-        return '{}: {}'.format(self.recorded_at.strftime('%Y-%m-%d '), self.get_day_display())
+        return '{}: {} : {}'.format(self.recorded_at.strftime('%Y-%m-%d '), self.get_day_display(), self.user,)
 
     class Meta:
         ordering = ['day']

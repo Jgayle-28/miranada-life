@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 
 {% load timesheet_tags %}
 
@@ -11,27 +12,33 @@
                 {% earnings_form %}
             </div>
             <div class="col-md-6">
-                <h2 class="font-weight-light">For the Week</h2>
+                <h2 class="font-weight-light">For the week</h2>
                 <!-- Displays each recorded day for user -->
                 <div class="list-group">
                     {% for day in user.earnings.all %}
-                    <div class="list-group-item alert-light">
+                    <div class="list-group-item alert-secondary">
                         <!-- Displays the day -->
-                        <h5 class="mb-1 day-text">
+                        <h5 class="mb-1 text-primary">
                             {{ day.get_day_display }}
                         <!-- Displays the date recorded -->
                         <small><time class="pull-right small" datetime="{{ day.recorded_at }}">{{ day.recorded_at|date:"SHORT_DATE_FORMAT" }}</time></small>
                         </h5>
                         <!-- Notes for the day -->
-                        {% if day.notes %}
-                            {{ day.notes|linebreaks }}
-                        {% endif %}
+                        <span class="text-secondary">
+                            {% if day.notes %}
+                                {{ day.notes|linebreaks }}
+                            {% endif %}
+                        </span>
                         <!-- What they made -->
-                        {{ day.made|linebreaks }}
+                        <span class="">{{ day.made|linebreaks }}</span>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/stretchy.js' %}" async></script>
 {% endblock %}

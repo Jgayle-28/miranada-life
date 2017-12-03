@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+{% load timesheet_tags %}
+
+{% block title %} Dashboard | {{ block.super }} {% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                {% earnings_form %}
+            </div>
+            <div class="col-md-6">
+                <h2 class="font-weight-light mb-3">For the week</h2>
+                <!-- Displays each recorded day for user -->
+                <div class="list-group">
+                    {% for day in user.earnings.all %}
+                    <div class="list-group-item alert-secondary">
+                        <!-- Displays the day -->
+                        <h5 class="mb-1 text-primary">
+                            {{ day.get_day_display }}
+                        <!-- Displays the date recorded -->
+                        <small><time class="pull-right small" datetime="{{ day.recorded_at }}">{{ day.recorded_at|date:"SHORT_DATE_FORMAT" }}</time></small>
+                        </h5>
+                        <!-- Notes for the day -->
+                        <span class="text-secondary">
+                            <small>
+                            {% if day.notes %}
+                                {{ day.notes|linebreaks }}
+                            {% endif %}
+                            </small>
+                        </span>
+                        <!-- What they made -->
+                        <span class="">{{ day.made|linebreaks }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3 text-center">
+                <!-- Displays total for the week -->
+                {% weekly_total as weekly_total %}
+                <p>{{ weekly_total }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/stretchy.js' %}" async></script>
+{% endblock %}

@@ -12,7 +12,6 @@ body{
     background: #333;
     color: #fff;
     font-weight: light;
-    margin-bottom: 150px;
 }
 
 .content-container{
@@ -131,7 +130,6 @@ body{
 .footer {
 position: absolute;
 bottom: 0;
-height: 150px;
 width: 100%;
 background-color: #f5f5f5;
 }

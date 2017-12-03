@@ -11,10 +11,20 @@ from braces.views import SelectRelatedMixin
 
 from . import forms
 
+# User dashboard for comments
 class Dashboard(LoginRequiredMixin, SelectRelatedMixin, generic.DetailView):
     model = User
     select_related = ('days',)
     template_name = 'users/dashboard.html'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+# Allows users to record their daily earnings
+class Record(LoginRequiredMixin, SelectRelatedMixin, generic.DetailView):
+    model = User
+    select_related = ('days',)
+    template_name = 'users/record.html'
 
     def get_object(self, queryset=None):
         return self.request.user

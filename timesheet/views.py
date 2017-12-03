@@ -7,7 +7,7 @@ from .forms import DailyEarningForm
 
 class CreateDay(LoginRequiredMixin, CreateView):
     form_class = DailyEarningForm
-    success_url = reverse_lazy('users:dashboard')
+    success_url = reverse_lazy('users:record')
 
     def form_valid(self, form):
         form.instance.user = self.request.user

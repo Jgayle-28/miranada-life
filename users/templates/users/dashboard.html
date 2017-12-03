@@ -13,6 +13,9 @@
             </div>
             <div class="col-md-6">
                 <h2 class="font-weight-light">For the week</h2>
+                <!-- Displays total for the week -->
+                {% weekly_total as weekly_total %}
+                <p>{{ weekly_total }}</p>
                 <!-- Displays each recorded day for user -->
                 <div class="list-group">
                     {% for day in user.earnings.all %}
@@ -25,9 +28,11 @@
                         </h5>
                         <!-- Notes for the day -->
                         <span class="text-secondary">
+                            <small>
                             {% if day.notes %}
                                 {{ day.notes|linebreaks }}
                             {% endif %}
+                            </small>
                         </span>
                         <!-- What they made -->
                         <span class="">{{ day.made|linebreaks }}</span>
